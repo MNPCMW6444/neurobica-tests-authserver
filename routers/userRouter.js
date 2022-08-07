@@ -58,14 +58,8 @@ router.post("/", async (req, res) => {
     res
       .cookie("token", token, {
         httpOnly: true,
-        sameSite:
-          process.env.NODE_ENV === "development"
-            ? "lax"
-            : process.env.NODE_ENV === "production" && "none",
-        secure:
-          process.env.NODE_ENV === "development"
-            ? false
-            : process.env.NODE_ENV === "production" && true,
+        sameSite: "none",
+        secure: true,
       })
       .send();
   } catch (err) {
@@ -114,14 +108,8 @@ router.post("/login", async (req, res) => {
     res
       .cookie("token", token, {
         httpOnly: true,
-        sameSite:
-          process.env.NODE_ENV === "development"
-            ? "lax"
-            : process.env.NODE_ENV === "production" && "none",
-        secure:
-          process.env.NODE_ENV === "development"
-            ? false
-            : process.env.NODE_ENV === "production" && true,
+        sameSite: "none",
+        secure: true,
       })
       .send();
   } catch (err) {
@@ -149,14 +137,8 @@ router.get("/logOut", (req, res) => {
     res
       .cookie("token", "", {
         httpOnly: true,
-        sameSite:
-          process.env.NODE_ENV === "development"
-            ? "lax"
-            : process.env.NODE_ENV === "production" && "none",
-        secure:
-          process.env.NODE_ENV === "development"
-            ? false
-            : process.env.NODE_ENV === "production" && true,
+        sameSite: "none",
+        secure: true,
         expires: new Date(0),
       })
       .send();
