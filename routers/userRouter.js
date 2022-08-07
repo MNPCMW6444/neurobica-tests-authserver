@@ -149,7 +149,10 @@ router.get("/logOut", (req, res) => {
     res
       .cookie("token", "", {
         httpOnly: true,
-        sameSite: "none",
+        sameSite:
+          process.env.NODE_ENV === "development"
+            ? "lax"
+            : process.env.NODE_ENV === "production" && "none",
         secure:
           process.env.NODE_ENV === "development"
             ? false
