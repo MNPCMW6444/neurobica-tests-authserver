@@ -15,7 +15,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:3000",
-      "https://https://unrivaled-beignet-d866eb.netlify.app",
+      "https://unrivaled-beignet-d866eb.netlify.app",
     ],
     credentials: true,
   })
