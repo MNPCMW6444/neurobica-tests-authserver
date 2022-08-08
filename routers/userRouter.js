@@ -62,8 +62,10 @@ router.post("/", async (req, res) => {
         process.env.NODE_ENV === "production"
           ? {
               httpOnly: true,
+              sameSite: "none",
+              secure: true,
             }
-          : { httpOnly: true, sameSite: "none", secure: true }
+          : { httpOnly: true }
       )
       .send();
   } catch (err) {
@@ -116,8 +118,10 @@ router.post("/login", async (req, res) => {
         process.env.NODE_ENV === "production"
           ? {
               httpOnly: true,
+              sameSite: "none",
+              secure: true,
             }
-          : { httpOnly: true, sameSite: "none", secure: true }
+          : { httpOnly: true }
       )
       .send();
   } catch (err) {
@@ -149,12 +153,12 @@ router.get("/logOut", (req, res) => {
         process.env.NODE_ENV === "production"
           ? {
               httpOnly: true,
+              sameSite: "none",
+              secure: true,
               expires: new Date(0),
             }
           : {
               httpOnly: true,
-              sameSite: "none",
-              secure: true,
               expires: new Date(0),
             }
       )
