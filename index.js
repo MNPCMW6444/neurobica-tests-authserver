@@ -13,7 +13,7 @@ const app = express();
 app.use(express.json());
 app.use(
   cors({
-    origin: ["http://localhost:3000", "https://test.neurobica.online"],
+    origin: ["http://localhost:3000", "https://testc.neurobica.online"],
     credentials: true,
   })
 );
