@@ -121,7 +121,6 @@ router.post("/login", async (req, res) => {
 router.get("/loggedIn", (req, res) => {
   try {
     const token = req.cookies.token;
-    console.log(req.cookies);
 
     if (!token) return res.json(null);
 
