@@ -13,10 +13,7 @@ const app = express();
 app.use(express.json());
 app.use(
   cors({
-    origin: [
-      "http://localhost:3000",
-      "https://unrivaled-beignet-d866eb.netlify.app",
-    ],
+    origin: ["http://localhost:3000", "https://test.neurobica.online"],
     credentials: true,
   })
 );
