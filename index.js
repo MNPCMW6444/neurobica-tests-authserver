@@ -19,7 +19,7 @@ app.use(
 );
 app.use(cookieParser());
 
-const PORT = process.env.PORT || 5011;
+const PORT = process.env.PORT || 9876;
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
 
 // set up routers
